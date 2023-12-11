@@ -4,7 +4,8 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
 import { abbreviationWords } from "../utilities/function";
-import { FaMinusSquare, FaPlusSquare } from "react-icons/fa";
+import { FaMinus, FaPlus } from "react-icons/fa";
+import { IoTrashOutline } from "react-icons/io5";
 
 const Cards = ({ product }) => {
   const { id, title, image, price, count } = product;
@@ -35,7 +36,9 @@ const Cards = ({ product }) => {
             <span style={{cursor: 'pointer'}}
               onClick={handleDecrement}
             >
-              <FaMinusSquare />
+              {
+                count === 1 ? <IoTrashOutline /> : <FaMinus />
+              }
             </span>
             <span className="mx-2">
               <Badge variant="primary">{count}</Badge>
@@ -43,7 +46,7 @@ const Cards = ({ product }) => {
             <span style={{cursor: 'pointer'}}
               onClick={handleIncrement}
             >
-              <FaPlusSquare />
+              <FaPlus />
             </span>
           </div>
         ) : (

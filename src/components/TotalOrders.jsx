@@ -1,4 +1,4 @@
-import { FaMinusSquare, FaPlusSquare } from "react-icons/fa";
+import { FaMinus, FaPlus } from "react-icons/fa";
 import { IoTrashOutline } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { decrementProduct, incrementProduct } from "../features/products/productsSlice";
@@ -17,11 +17,11 @@ const TotalOrders = ({ order }) => {
         <div>{abbreviationWords(title)}</div>
         <div className="d-flex align-items-center">
           <span style={{ cursor: "pointer" }} onClick={() => dispatch(decrementProduct(id))}>
-            {count === 1 ? <IoTrashOutline /> : <FaMinusSquare />}
+            {count === 1 ? <IoTrashOutline /> : <FaMinus />}
           </span>
           <span className="mx-2">{count}</span>
           <span style={{ cursor: "pointer" }} onClick={() => dispatch(incrementProduct(id))}>
-            <FaPlusSquare />
+            <FaPlus />
           </span>
         </div>
       </div>

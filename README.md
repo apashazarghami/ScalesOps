@@ -1,8 +1,1 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I have developed a shopping website using React, styled with Bootstrap and made it responsive. The products are fetched from an API and displayed using lazy loading. The website features a search functionality based on product titles, and users can sort products by both maximum and minimum prices. Clicking the "Add to Cart" button adds the product to the shopping cart, and users can adjust the quantity or remove items by clicking on positive and negative options. Additionally, users can click on the shopping cart icon to navigate to a page displaying a list of all products in the cart. It's worth noting that this website is designed as a single-page application and I have also utilized Redux in this project.
