@@ -3,19 +3,42 @@ import axios from 'axios';
 const getAsyncProcuts = createAsyncThunk('products/getAsyncProcuts', async (_, { rejectWithValue }) => {
     try {
         const { data } = await axios.get('https://fakestoreapi.com/products')
-        console.log(data)
         return data
     } catch (err) {
-        console.log(err)
         return rejectWithValue(err.message)
     }
 })
-const procuctsSlice = createSlice({
+const productsSlice = createSlice({
     name: 'products',
     initialState: {
         isLoading: false,
         products: [],
         error: null
+    },
+    reducers: {
+        addProduct: (state, { payload }) => {
+            state.products.forEach(product => {
+                if(product.id === Number(payload)) {
+                    product.count = 1
+                }
+            })
+        },
+
+        incrementProduct: (state, { payload }) => {
+            state.products.forEach(product => {
+                if(product.id === Number(payload)) {
+                    product.count = product.count + 1
+                }
+            })
+        },
+
+        decrementProduct: (state, { payload }) => {
+            state.products.forEach(product => {
+                if(product.id === Number(payload)) {
+                    product.count = product.count - 1
+                }
+            })
+        }
     },
 
     extraReducers: builder => {
@@ -38,4 +61,6 @@ const procuctsSlice = createSlice({
 
 export { getAsyncProcuts };
 
-export default procuctsSlice.reducer
+export const { addProduct, incrementProduct, decrementProduct } = productsSlice.actions
+
+export default productsSlice.reducer
