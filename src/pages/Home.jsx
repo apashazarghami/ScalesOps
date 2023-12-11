@@ -18,8 +18,10 @@ const Home = () => {
   const [sortOption, setSortOption] = useState("");
 
   useEffect(() => {
-    dispatch(getAsyncProcuts());
-  }, [dispatch]);
+    if (products.length === 0) {
+      dispatch(getAsyncProcuts());
+    }
+  }, [dispatch, products]);
 
   const filteredProducts = products.filter(product =>
     product.title.toLowerCase().includes(searchQuery.toLowerCase())

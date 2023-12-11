@@ -13,12 +13,12 @@ const Header = () => {
       <Link to="/" className="text-white text-decoration-none hover-gray">
         Home
       </Link>
-      <div className="position-relative">
+      <Link to='cart' className="text-white text-decoration-none position-relative">
         <span style={{left: '0.6rem', bottom: '0.6rem'}} className="badge bg-white text-primary position-absolute p-1 badge-sm">
           {totalOrders}
         </span>
         <FaCartShopping />
-      </div>
+      </Link>
     </div>
   );
 };

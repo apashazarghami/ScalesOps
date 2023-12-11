@@ -24,6 +24,7 @@ const Cards = ({ product }) => {
         variant="top"
         src={image}
         alt={title}
+        loading="lazy"
         className="card-img-top h-50 p-2"
       />
       <Card.Body className="d-flex flex-column">
